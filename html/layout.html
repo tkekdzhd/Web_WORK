@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JQuery -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;500;600;900&display=swap" rel="stylesheet">
+
+    <!-- xeicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <title>Layout</title>
+</head>
+
+<body>
+    <header id="header" class="sa">
+        <div id="logo_div">
+            <div id="logo1">
+                <h2><a href="#">H</a></h2>
+            </div>
+            <div id="logo2"><a href="#">My Health Bank</a></div>
+        </div>
+        <div id="menu">
+            <div class="menu sel" id="menu_1"><a href="#">About</a></div>
+            <div class="menu sel" id="menu_2"><a href="#">Dataset</a></div>
+            <div class="menu sel" id="menu_3"><a href="#">User Guide</a></div>
+            <div class="menu sel" id="menu_4"><a href="#">My Page</a></div>
+            <div class="menu" id="menu_5"><a href="#">Log In</a></div>
+        </div>
+    </header>
+    <main>
+
+    </main>
+    <footer class="sa">
+        <div id="footer_div1">
+            <div>
+                <div class="footer_div1_title">ABOUT</div>
+                <ul>
+                    <li><a href="#">MyHealthBank</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">QNA</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer_div1_title">DATASET</div>
+                <ul>
+                    <li><a href="#">데이터 검색</a></li>
+                    <li><a href="#">데이터 이용현황</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer_div1_title">USER GUIDE</div>
+                <ul>
+                    <li><a href="#">이용정책</a></li>
+                    <li><a href="#">이용가이드</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer_div1_title">MY PAGE</div>
+                <ul>
+                    <li><a href="#">개인정보수정</a></li>
+                    <li><a href="#">데이터 관리</a></li>
+                    <li><a href="#">계약관리</a></li>
+                    <li><a href="#">메세지</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div id="footer_div2">
+            <div id="footer_div2_left">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                </ul>
+                <div id="footer_div2_left_logo"><a href="#">MyHealthBank</a></div>
+            </div>
+            <div id="footer_div2_center">
+                2021 MyHealthBank. All Rights Reserved.
+            </div>
+            <div id="footer_div2_right">
+                <div class="icons" id="icon_1"><a href="#"><i class="xi-twitter"></i></a></div>
+                <div class="icons" id="icon_2"><a href="#"><i class="xi-facebook"></i></a></div>
+                <div class="icons" id="icon_3"><a href="#"><i class="xi-youtube-play"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Scroll Animation (sa, 스크롤 애니메이션)
+        const saTriggerMargin = 300;
+        const saElementList = document.querySelectorAll('.sa');
+
+        const saFunc = function () {
+            for (const element of saElementList) {
+                if (!element.classList.contains('show')) {
+                    if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+                        element.classList.add('show');
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('load', saFunc);
+        window.addEventListener('scroll', saFunc);
+    </script>
+</body>
+
+</html>
