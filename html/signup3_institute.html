@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JQuery -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;500;600;900&display=swap" rel="stylesheet">
+
+    <!-- xeicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="/css/signup.css">
+    <title>Signup3_Institute</title>
+</head>
+
+<body>
+    <header id="header" class="sa">
+        <div id="logo_div">
+            <div id="logo1">
+                <h2><a href="#">H</a></h2>
+            </div>
+            <div id="logo2"><a href="#">My Health Bank</a></div>
+        </div>
+        <div id="menu">
+            <div class="menu sel" id="menu_1"><a href="#">About</a></div>
+            <div class="menu sel" id="menu_2"><a href="#">Dataset</a></div>
+            <div class="menu sel" id="menu_3"><a href="#">User Guide</a></div>
+            <div class="menu sel" id="menu_4"><a href="#">My Page</a></div>
+            <div class="menu" id="menu_5"><a href="#">Log In</a></div>
+        </div>
+    </header>
+    <main>
+        <div id="signup_div4">
+            <div id="signup_div4_left">
+                <div>
+                    <ul class="progressbar1">
+                        <li>Step 1</li>
+                        <li>Step 2</li>
+                        <li class="active">Step 3</li>
+                    </ul>
+                </div>
+                <h2 id="signup_div4_left_title">Create Institute account</h2>
+                <form>
+                    <div id="signup_div4_left_content">
+                        <p>Email Address</p>
+                        <input type="email" id="email_input" class="signup_div4_left_content_input"
+                            placeholder="myhealthbank@example.com" onchange="emailbtn()">
+                        <p>Password</p>
+                        <input type="password" id="pw" class="signup_div4_left_content_input" onchange="check_pw()">
+                        <span id="check0">Use 6-16 upper and lowercase letters, numbers, and special characters.</span>
+                        <p>Confirm Password</p>
+                        <input type="password" id="pw2" class="signup_div4_left_content_input"
+                            onchange="check_pw()"><span id="check"></span>
+                        <p>Full Name</p>
+                        <input id="name_input" type="text" class="signup_div4_left_content_input">
+                        <p>Phone Number</p>
+                        <input id="phone_input" type="text" class="signup_div4_left_content_input"
+                            placeholder="000-0000-0000" onchange="check_phone()">
+                        <p>Organization name</p>
+                        <input type="text" id="organization_input" class="signup_div4_left_content_input">
+                        <p>Department</p>
+                        <input type="text" id="department_input" class="signup_div4_left_content_input">
+                        <input type="button" value="Register" id="signup_div4_next" onclick="nextbtn()">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="sa">
+        <div id="footer_div1">
+            <div>
+                <div class="footer_div1_title">ABOUT</div>
+                <ul>
+                    <li><a href="#">MyHealthBank</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">QNA</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer_div1_title">DATASET</div>
+                <ul>
+                    <li><a href="#">데이터 검색</a></li>
+                    <li><a href="#">데이터 이용현황</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer_div1_title">USER GUIDE</div>
+                <ul>
+                    <li><a href="#">이용정책</a></li>
+                    <li><a href="#">이용가이드</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer_div1_title">MY PAGE</div>
+                <ul>
+                    <li><a href="#">개인정보수정</a></li>
+                    <li><a href="#">데이터 관리</a></li>
+                    <li><a href="#">계약관리</a></li>
+                    <li><a href="#">메세지</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div id="footer_div2">
+            <div id="footer_div2_left">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                </ul>
+                <div id="footer_div2_left_logo"><a href="#">MyHealthBank</a></div>
+            </div>
+            <div id="footer_div2_center">
+                2021 MyHealthBank. All Rights Reserved.
+            </div>
+            <div id="footer_div2_right">
+                <div class="icons" id="icon_1"><a href="#"><i class="xi-twitter"></i></a></div>
+                <div class="icons" id="icon_2"><a href="#"><i class="xi-facebook"></i></a></div>
+                <div class="icons" id="icon_3"><a href="#"><i class="xi-youtube-play"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Scroll Animation (sa, 스크롤 애니메이션)
+        const saTriggerMargin = 100;
+        const saElementList = document.querySelectorAll('.sa');
+
+        const saFunc = function () {
+            for (const element of saElementList) {
+                if (!element.classList.contains('show')) {
+                    if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+                        element.classList.add('show');
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('load', saFunc);
+        window.addEventListener('scroll', saFunc);
+
+        function email_check(email) {
+            var regex = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            return (email != '' && email != 'undefined' && regex.test(email));
+        }
+
+        function emailbtn() {
+            var email = document.getElementById("email_input");
+
+            if (!email.value) {
+                alert("Please enter your email.");
+                email.focus();
+                return;
+            }
+            else {
+                if (!email_check(email.value)) {
+                    alert("Email format is not correct.");
+                    email.focus();
+                    return;
+                }
+            }
+        }
+
+        function check_pw() {
+            var pw0 = document.getElementById('pw');
+            var pw = document.getElementById('pw').value;
+            var SC = ["!", "@", "#", "$", "%"];
+            var check_SC = 0;
+
+            if (pw.length < 6 || pw.length > 16) {
+                window.alert('Passwords must be at least 6 characters.');
+                document.getElementById('pw').value = '';
+                pw0.focus();
+            }
+            for (var i = 0; i < SC.length; i++) {
+                if (pw.indexOf(SC[i]) != -1) {
+                    check_SC = 1;
+                }
+            }
+            if (check_SC == 0) {
+                window.alert('Passwords must contain special characters.')
+                document.getElementById('pw').value = '';
+                pw0.focus();
+            }
+            if (document.getElementById('pw').value != '' && document.getElementById('pw2').value != '') {
+                if (document.getElementById('pw').value == document.getElementById('pw2').value) {
+                    document.getElementById('check').innerHTML = 'Match'
+                    document.getElementById('check').style.color = 'blue';
+                }
+                else {
+                    document.getElementById('check').innerHTML = 'Password does not match';
+                    document.getElementById('check').style.color = 'red';
+                }
+            }
+        }
+
+        function check_phone() {
+            var phoneRule = /^\d{3}-\d{3,4}-\d{4}$/;
+
+            if (!phoneRule.test($("input[id='phone_input']").val())) {
+                alert('Phone number format is not correct.');
+                return false;
+            }
+
+
+        }
+
+        function nextbtn() {
+            var email = document.getElementById('email_input').value;
+            var pw = document.getElementById('pw').value;
+            var pw2 = document.getElementById('pw2').value;
+            var name = document.getElementById('name_input').value;
+            var phone = document.getElementById('phone_input').value;
+            var organization = document.getElementById('organization_input').value;
+            var department = document.getElementById('department_input').value;
+
+            console.log(pw);
+            console.log(name);
+            if (email == '' || pw == '' || pw2 == '' || name == '' || phone == ''||organization==''||department=='') {
+                if (email == '') {
+                    alert('Please enter your email');
+                } else if (pw == '') {
+                    alert('Please enter your password');
+                } else if (pw2 == '') {
+                    alert('Please confirm your email');
+                } else if (name == '') {
+                    alert('Please enter your name');
+                } else if (phone == '') {
+                    alert('Please enter your phone number');
+                } else if (organization == '') {
+                    alert('Please enter your organization name');
+                } else if (department == ''){
+                    alert('Please enter your department');
+                }
+            } else {
+                location.href = 'login.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

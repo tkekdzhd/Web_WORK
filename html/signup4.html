@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JQuery -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;500;600;900&display=swap" rel="stylesheet">
+
+    <!-- xeicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="/css/signup.css">
+    <title>Signup</title>
+</head>
+
+<body>
+    <header id="header" class="sa">
+        <div id="logo_div">
+            <div id="logo1">
+                <h2><a href="#">H</a></h2>
+            </div>
+            <div id="logo2"><a href="#">My Health Bank</a></div>
+        </div>
+        <div id="menu">
+            <div class="menu sel" id="menu_1"><a href="#">About</a></div>
+            <div class="menu sel" id="menu_2"><a href="#">Dataset</a></div>
+            <div class="menu sel" id="menu_3"><a href="#">User Guide</a></div>
+            <div class="menu sel" id="menu_4"><a href="#">My Page</a></div>
+            <div class="menu" id="menu_5"><a href="#">Log In</a></div>
+        </div>
+    </header>
+    <main>
+        <div id="signup_div5">
+            <div>
+                <ul class="progressbar4">
+                    <li>Step 1</li>
+                    <li>Step 2</li>
+                    <li>Step 3</li>
+                    <li class="active">Step 4</li>
+                </ul>
+            </div>
+            <h2 id="signup_div5_title">CHECK AGREEMENT</h2>
+            <form>
+                <div id="signup_div5_content">
+                    <br>
+                    <p class="signup_div5_content_bold">The questions below are questions that confirm your default consent preferences regarding the use of your data. If you agree to use data automatically, it will be changed to the default setting, and you can change it at any time in Edit personal information later.</p>
+                    <br>
+                    <p class="signup_div5_content_bold">1. Choose from the following cases for the scope of your data use.</p>
+                    <div><label><input type="radio" name="C" value="C-01"> Directly agree on a case-by-case basis</label></div>
+                    <div><label><input type="radio" name="C" value="C-02"> Automatically agree</label></div>
+                    <br>
+                    <p class="signup_div5_content_bold">2. Regarding extending your data usage contract, please select one of the following:</p>
+                    <div><label><input type="radio" name="E" value="E-01"> Unable to extend contract</label></div>
+                    <div><label><input type="radio" name="E" value="E-02"> Automatic contract extension</label></div>
+                    <div><label><input type="radio" name="E" value="E-03"> When extending the contract, directly agree on a case-by-case basis</label></div>
+                    <br>
+                    <p class="signup_div5_content_bold">3. Please choose from the following cases regarding changes to your data usage agreement:</p>
+                    <div><label><input type="radio" name="M" value="M-01"> All contract content can be re-modified</label></div>
+                    <div><label><input type="radio" name="M" value="M-02"> Only derivative information-related content can be requested to be changed
+                    </label></div>
+                    <div><label><input type="radio" name="M" value="M-03"> Unable to request a change within the contract period
+                    </label></div>
+                    <br>
+                    <p class="signup_div5_content_bold">4. Please select one of the following regarding withdrawal of your data usage agreement: </p>
+                    <div><label><input type="radio" name="W" value="W-01"> Possible withdrawal during the contract period</label></div>
+                    <div><label><input type="radio" name="W" value="W-02"> No withdrawal within the contract period
+                    </label></div>
+                    <br>
+                    <p class="signup_div5_content_bold">5. Choose from the following cases about how to reuse your data.</p>
+                    <div><label><input type="radio" name="R" value="R-01"> Agree to be used to other agencies</label></div>
+                    <div><label><input type="radio" name="R" value="R-02"> Direct consent for additional use by other agencies</label></div>
+                    <div><label><input type="radio" name="R" value="R-03"> No additional use by other organizations</label></div>
+                    <br>
+                    <p class="signup_div5_content_bold">6. Choose how to provide information derived from your data usage.</p>
+                    <div><label><input type="radio" name="I" value="I-01"> Telephone</label></div>
+                    <div><label><input type="radio" name="I" value="I-02"> Text message</label></div>
+                    <div><label><input type="radio" name="I" value="I-03"> Email</label></div>
+                    <div><label><input type="radio" name="I" value="I-04"> Do not receive</label></div>
+                    <input type="button" value="Register" id="signup_div5_next" onclick="nextbtn()">
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="sa">
+        <div id="footer_div1">
+            <div>
+                <div class="footer_div1_title">ABOUT</div>
+                <ul>
+                    <li><a href="#">MyHealthBank</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">QNA</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer_div1_title">DATASET</div>
+                <ul>
+                    <li><a href="#">데이터 검색</a></li>
+                    <li><a href="#">데이터 이용현황</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer_div1_title">USER GUIDE</div>
+                <ul>
+                    <li><a href="#">이용정책</a></li>
+                    <li><a href="#">이용가이드</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer_div1_title">MY PAGE</div>
+                <ul>
+                    <li><a href="#">개인정보수정</a></li>
+                    <li><a href="#">데이터 관리</a></li>
+                    <li><a href="#">계약관리</a></li>
+                    <li><a href="#">메세지</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div id="footer_div2">
+            <div id="footer_div2_left">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                </ul>
+                <div id="footer_div2_left_logo"><a href="#">MyHealthBank</a></div>
+            </div>
+            <div id="footer_div2_center">
+                2021 MyHealthBank. All Rights Reserved.
+            </div>
+            <div id="footer_div2_right">
+                <div class="icons" id="icon_1"><a href="#"><i class="xi-twitter"></i></a></div>
+                <div class="icons" id="icon_2"><a href="#"><i class="xi-facebook"></i></a></div>
+                <div class="icons" id="icon_3"><a href="#"><i class="xi-youtube-play"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Scroll Animation (sa, 스크롤 애니메이션)
+        const saTriggerMargin = 100;
+        const saElementList = document.querySelectorAll('.sa');
+
+        const saFunc = function () {
+            for (const element of saElementList) {
+                if (!element.classList.contains('show')) {
+                    if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+                        element.classList.add('show');
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('load', saFunc);
+        window.addEventListener('scroll', saFunc);
+
+        function nextbtn() {
+            var C = $(":input:radio[name=C]:checked").val();
+            var E = $(":input:radio[name=E]:checked").val();
+            var M = $(":input:radio[name=M]:checked").val();
+            var W = $(":input:radio[name=W]:checked").val();
+            var R = $(":input:radio[name=R]:checked").val();
+            var I = $(":input:radio[name=I]:checked").val();
+            if(C==undefined&&E==undefined&&M==undefined&&W==undefined&&R==undefined&&I==undefined){
+                alert('There are unchecked questions.');
+            }else if(C==undefined){
+                alert('Question 1 has not been checked.');
+            }else if(E==undefined){
+                alert('Question 2 has not been checked.');
+            }else if(M==undefined){
+                alert('Question 3 has not been checked.');
+            }else if(W==undefined){
+                alert('Question 4 has not been checked.');
+            }else if(R==undefined){
+                alert('Question 5 has not been checked.');
+            }else if(I==undefined){
+                alert('Question 6 has not been checked.');
+            }else{
+                location.href="login.html";
+            }
+            console.log(C+"|"+E+"|"+M+"|"+W+"|"+R+"|"+I);
+        }
+    </script>
+</body>
+
+</html>

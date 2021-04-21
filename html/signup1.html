@@ -36,6 +36,13 @@
     </header>
     <main>
         <div id="signup_div2" class="sa">
+            <!-- <ul class="progressbar4">
+                <li class="active">Step 1</li>
+                <li>Step 2</li>
+                <li>Step 3</li>
+                <li>Step 4</li>
+                <li>Step 5</li>
+            </ul> -->
             <p id="signup_title2">Choose User Type</p>
             <div id="signup_usertype">
                 <div class="signup_usertype_div" onclick="location.href='signup2.html'">
@@ -44,7 +51,7 @@
                     <p>Individual User</p>
                     <p>Sign up as Individual <i class="xi-long-arrow-right"></i></p>
                 </div>
-                <div class="signup_usertype_div" onclick="location.href='signup2.html'">
+                <div class="signup_usertype_div" onclick="location.href='signup2_institute.html'">
                     <div class="signup_usertype_icon"><i class="xi-group xi-2x"></i></div>
                     <p class="signup_usertype_title">Institute</p>
                     <p>Group User</p>
@@ -125,27 +132,6 @@
         window.addEventListener('load', saFunc);
         window.addEventListener('scroll', saFunc);
 
-        function email_check(email) {
-            var regex = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-            return (email != '' && email != 'undefined' && regex.test(email));
-        }
-
-        function emailbtn() {
-            var email = document.getElementById("signup_input");
-
-            if (!email.value) {
-                alert("이메일을 입력해주세요.");
-                email.focus();
-                return;
-            }
-            else {
-                if (!email_check(email.value)) {
-                    alert("이메일 형식이 잘못되었습니다");
-                    email.focus();
-                    return;
-                }
-            }
-        }
     </script>
 </body>
 

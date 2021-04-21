@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- JQuery -->
     <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,7 +15,7 @@
     <!-- xeicon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="/css/signup.css">
-    <title>Signup</title>
+    <title>Signup3</title>
 </head>
 
 <body>
@@ -37,52 +35,38 @@
         </div>
     </header>
     <main>
-        <ul class="progressbar4">
-            <li class="active">Step 1</li>
-            <li>Step 2</li>
-            <li>Step 3</li>
-            <li>Step 4</li>
-        </ul>
-        <div id="signup_div1" class="sa">
-            <p id="signup_title1">Are you already signed in?</p>
-            <p id="signup_desc1">Check your email account's availability to our service.</p>
-            <input id="signup_input" type="email" placeholder="Your Email Address" maxlength="30" name="mail">
-            <p id="signup_desc2">please check your email</p>
-            <input id="signup_btn" type="button" value="Check ID" onclick="emailbtn()">
-        </div>
-        <ul class="progressbar3">
-            <li>Step 1</li>
-            <li class="active">Step 2</li>
-            <li>Step 3</li>
-            <li>Step 4</li>
-        </ul>
-        <div id="signup_div3" class="sa">
-            <div id="signup_div3_div">
-                <div id="div3_all"><label class="check_label"><input type="checkbox" id="checkall"> <span>I agree to all
-                            terms and conditions</span></label></div>
-                <div id="checkbox_01">
-                    <div style="line-height: 15px;">
-                        <label class="check_label"><input type="checkbox" name="chk" id="chk_01"><span>(required) Conditions of
-                                Use</span></label>
-                    </div>
-                    <div id="checkbox_01_term">
-                        서비스이용약관<br>서비스이용약관<br>서비스이용약관<br>서비스이용약관<br>서비스이용약관<br>서비스이용약관<br>서비스이용약관<br>서비스이용약관<br></div>
+        <div id="signup_div4">
+            <div id="signup_div4_left">
+                <div>
+                    <ul class="progressbar4">
+                        <li>Step 1</li>
+                        <li>Step 2</li>
+                        <li class="active">Step 3</li>
+                        <li>Step 4</li>
+                    </ul>
                 </div>
-                <div id="checkbox_02">
-                    <div style="line-height: 15px;">
-                        <label class="check_label"><input type="checkbox" name="chk" id="chk_02"><span>(required) Privacy
-                                Notice</span></label>
+                <h2 id="signup_div4_left_title">Create Individual account</h2>
+                <form>
+                    <div id="signup_div4_left_content">
+                        <p>Email Address</p>
+                        <input type="email" id="email_input" class="signup_div4_left_content_input"
+                            placeholder="myhealthbank@example.com" onchange="emailbtn()">
+                        <p>Password</p>
+                        <input type="password" id="pw" class="signup_div4_left_content_input" onchange="check_pw()">
+                        <span id="check0">Use 6-16 upper and lowercase letters, numbers, and special characters.</span>
+                        <p>Confirm Password</p>
+                        <input type="password" id="pw2" class="signup_div4_left_content_input"
+                            onchange="check_pw()"><span id="check"></span>
+                        <p>Full Name</p>
+                        <input id="name_input" type="text" class="signup_div4_left_content_input">
+                        <p>Phone Number</p>
+                        <input id="phone_input" type="text" class="signup_div4_left_content_input"
+                            placeholder="000-0000-0000" onchange="check_phone()">
+                        <input type="button" value="Next Step" id="signup_div4_next" onclick="nextbtn()">
                     </div>
-                    <div id="checkbox_02_term">
-                        서비스이용약관<br>서비스이용약관<br>서비스이용약관<br>서비스이용약관<br>서비스이용약관<br>서비스이용약관<br>서비스이용약관<br>서비스이용약관<br></div>
-                </div>
-            </div>
-            <div id="signup_div3_btns">
-                <input type="button" value="Cancel" id="signup_div3_cancel">
-                <input type="button" value="Next Step" id="signup_div3_next" onclick="nextbtn()">
+                </form>
             </div>
         </div>
-
     </main>
     <footer class="sa">
         <div id="footer_div1">
@@ -140,7 +124,7 @@
     </footer>
     <script>
         // Scroll Animation (sa, 스크롤 애니메이션)
-        const saTriggerMargin = 300;
+        const saTriggerMargin = 100;
         const saElementList = document.querySelectorAll('.sa');
 
         const saFunc = function () {
@@ -162,7 +146,7 @@
         }
 
         function emailbtn() {
-            var email = document.getElementById("signup_input");
+            var email = document.getElementById("email_input");
 
             if (!email.value) {
                 alert("Please enter your email.");
@@ -174,34 +158,79 @@
                     alert("Email format is not correct.");
                     email.focus();
                     return;
-                } else {
-                    if (confirm("This email is available. Do you want to use it?") == true) {
-                        $('.progressbar4').css("display", "none");
-                        $('#signup_div1').css("display", "none");
-                        $('#signup_div3').css("display", "block");
-                        $('.progressbar3').css("display", "block");
-                    }
                 }
             }
+        }
+
+        function check_pw() {
+            var pw0 = document.getElementById('pw');
+            var pw = document.getElementById('pw').value;
+            var SC = ["!", "@", "#", "$", "%"];
+            var check_SC = 0;
+
+            if (pw.length < 6 || pw.length > 16) {
+                window.alert('Passwords must be at least 6 characters.');
+                document.getElementById('pw').value = '';
+                pw0.focus();
+            }
+            for (var i = 0; i < SC.length; i++) {
+                if (pw.indexOf(SC[i]) != -1) {
+                    check_SC = 1;
+                }
+            }
+            if (check_SC == 0) {
+                window.alert('Passwords must contain special characters.')
+                document.getElementById('pw').value = '';
+                pw0.focus();
+            }
+            if (document.getElementById('pw').value != '' && document.getElementById('pw2').value != '') {
+                if (document.getElementById('pw').value == document.getElementById('pw2').value) {
+                    document.getElementById('check').innerHTML = 'Match'
+                    document.getElementById('check').style.color = 'blue';
+                }
+                else {
+                    document.getElementById('check').innerHTML = 'Password does not match';
+                    document.getElementById('check').style.color = 'red';
+                }
+            }
+        }
+
+        function check_phone() {
+            var phoneRule = /^\d{3}-\d{3,4}-\d{4}$/;
+
+            if (!phoneRule.test($("input[id='phone_input']").val())) {
+                alert('Phone number format is not correct.');
+                return false;
+            }
+
+
         }
 
         function nextbtn() {
-            if($("#chk_01").is(":checked")&&$("#chk_02").is(":checked") == true){
-                location.href='signup3.html';
-            }else{
-                alert("check please");
+            var email = document.getElementById('email_input').value;
+            var pw = document.getElementById('pw').value;
+            var pw2 = document.getElementById('pw2').value;
+            var name = document.getElementById('name_input').value;
+            var phone = document.getElementById('phone_input').value;
+
+            console.log(pw);
+            console.log(name);
+            if (email == '' || pw == '' || pw2 == '' || name == '' || phone == '') {
+                if (email == '') {
+                    alert('Please enter your email');
+                } else if (pw == '') {
+                    alert('Please enter your password');
+                } else if (pw2 == '') {
+                    alert('Please confirm your email');
+                } else if (name == '') {
+                    alert('Please enter your name');
+                } else if (phone == '') {
+                    alert('Please enter your phone number');
+                }
+            } else {
+                location.href = 'signup4.html';
             }
         }
-
-        $(document).ready(function () {
-            $("#checkall").click(function () {
-                if ($("#checkall").prop("checked")) {
-                    $("input[name=chk]").prop("checked", true);
-                } else {
-                    $("input[name=chk]").prop("checked", false);
-                }
-            })
-        })
     </script>
 </body>
 

@@ -17,7 +17,7 @@
     <!-- xeicon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="/css/signup.css">
-    <title>Signup</title>
+    <title>Signup_institute</title>
 </head>
 
 <body>
@@ -37,11 +37,10 @@
         </div>
     </header>
     <main>
-        <ul class="progressbar4">
+        <ul class="progressbar1">
             <li class="active">Step 1</li>
             <li>Step 2</li>
             <li>Step 3</li>
-            <li>Step 4</li>
         </ul>
         <div id="signup_div1" class="sa">
             <p id="signup_title1">Are you already signed in?</p>
@@ -50,11 +49,10 @@
             <p id="signup_desc2">please check your email</p>
             <input id="signup_btn" type="button" value="Check ID" onclick="emailbtn()">
         </div>
-        <ul class="progressbar3">
+        <ul class="progressbar2">
             <li>Step 1</li>
             <li class="active">Step 2</li>
             <li>Step 3</li>
-            <li>Step 4</li>
         </ul>
         <div id="signup_div3" class="sa">
             <div id="signup_div3_div">
@@ -176,10 +174,10 @@
                     return;
                 } else {
                     if (confirm("This email is available. Do you want to use it?") == true) {
-                        $('.progressbar4').css("display", "none");
+                        $('.progressbar1').css("display", "none");
                         $('#signup_div1').css("display", "none");
                         $('#signup_div3').css("display", "block");
-                        $('.progressbar3').css("display", "block");
+                        $('.progressbar2').css("display", "block");
                     }
                 }
             }
@@ -187,7 +185,7 @@
 
         function nextbtn() {
             if($("#chk_01").is(":checked")&&$("#chk_02").is(":checked") == true){
-                location.href='signup3.html';
+                location.href='signup3_institute.html';
             }else{
                 alert("check please");
             }
