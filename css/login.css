@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-width: 942px;
+    height: 100%;
+    /* width: 100%; */
+    /* position: relative; */
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #3232ff;
+}
+
+.sa {
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+#main {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    /* margin-top: 5rem; */
+    justify-content: center;
+    align-items: center;
+    transform: translate(120%, 0);
+}
+
+#main.show {
+    opacity: 1;
+    transform: none;
+}
+/* left start */
+
+#main_left {
+    background-color: #EEF5FF;
+    height: 90%;
+    width: 40%;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#logo1 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin: 3rem auto 0;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 900;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #3232ff;
+    color: #fff;
+}
+
+#logo1 h2 {
+    margin: 0 auto;
+}
+
+#logo1 a:link, #logo1 a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+#logo2{
+    font-family: 'Heebo', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    width: auto;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: #44465C;
+}
+
+.signin_btns{
+    width: 10rem;
+    height: 1rem;
+    padding: 1rem 4rem;
+    margin: .5rem auto;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1.5px solid #e9e9e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .85rem;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 400;
+    color: #44465C;
+    cursor: pointer;
+}
+
+.signin_btns:hover{
+    border-color: #3232ff;
+    transition: all ease .5s;
+}
+
+.signin_btns_img{
+    margin-right: 20px;
+    border-radius: 100%;
+    color: #44465c;
+}
+
+#comment{
+    text-align: center;
+    font-size: .85rem;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 300;
+}
+
+#login_form{
+    margin: 0 auto;
+    width: 18rem;
+    height: auto;
+}
+
+.login_form_input{
+    margin-top: .5rem;
+    width: 16rem;
+    height: 1.5rem;
+    padding: .6rem 1.5rem .6rem .5rem;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+}
+
+#login_form input::placeholder{
+    font-size: .85rem;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 300;
+}
+
+#signin_submit{
+    text-align: center;
+    width: 18rem !important;
+    height: 2.5rem !important;
+    background-color: #3232ff;
+    color: #fff;
+    font-size: .85rem;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #e9e9e9;
+    margin-top: .5rem;
+}
+
+#signin_submit{
+    outline: none;
+}
+
+#signup{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#comment2{
+    font-size: .85rem;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 300;
+    color: #44465C;
+}
+
+#goto_signup{
+    font-size: .85rem;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    color: #44465C;
+}
+
+#goto_signup:visited{
+    color: #44465C;
+}
+/* left end */
+
+/* right start */
+
+#main_right {
+    background-color: #fff;
+    width: 60%;
+    height: 90%;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login_pic {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+#login_pic_a {
+    display: none;
+    text-decoration: none;
+    color: #fff;
+}
+
+#login_pic_a:link {
+    pointer-events: none;
+    cursor: default;
+}
+
+/* right end */

@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;500;600;900&display=swap" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- xeicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <title>Login</title>
 </head>
+
 <body>
-    
+    <div id="main" class="sa">
+        <div id="main_left">
+            <div id="logo1">
+                <h2><a href="#">H</a></h2>
+            </div>
+            <div id="logo2">
+                <div>Sign In To</div>
+                <div>My Health Bank</div>
+            </div>
+            <div class="signin_btns" onclick="location.href='#'">
+                <i class="xi-kakaotalk xi-x signin_btns_img"></i>
+                <span>Sign In With Kakao</span>
+            </div>
+            <div class="signin_btns" onclick="location.href='#'">
+                <i class="xi-naver-square xi-x signin_btns_img"></i>
+                <span>Sign In With Naver</span>
+            </div>
+            <div class="signin_btns" onclick="location.href='#'">
+                <i class="xi-google xi-x signin_btns_img"></i>
+                <span>Sign In With Google</span>
+            </div>
+            <div id="comment">Or Sign in with your e-mail</div>
+            <form id="login_form">
+                <input class="login_form_input" type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <br>
+                <input class="login_form_input" type="password" placeholder="Password">
+                <input type="submit" value="Sign In" id="signin_submit">
+            </form>
+            <div id="signup">
+                <span id="comment2">Don't have an account yet?</span>
+                <a id="goto_signup" href="index.html">Sign Up</a> 
+            </div>
+        </div>
+        <div id="main_right">
+            <img id="login_pic" src="login_pic.jpg">
+            <a id="login_pic_a" href="http://www.freepik.com">Designed by stories / Freepik</a>
+        </div>
+    </div>
+    <script>
+        // Scroll Animation (sa, 스크롤 애니메이션)
+        const saTriggerMargin = 300;
+        const saElementList = document.querySelectorAll('.sa');
+
+        const saFunc = function () {
+            for (const element of saElementList) {
+                if (!element.classList.contains('show')) {
+                    if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+                        element.classList.add('show');
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('load', saFunc);
+        window.addEventListener('scroll', saFunc);
+    </script>
 </body>
+
 </html>
